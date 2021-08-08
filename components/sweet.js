@@ -1,6 +1,7 @@
-import c from "./sweet.module.css";
+import Image from "next/image";
 import { useSession } from "next-auth/client";
 import Link from "next/link";
+import c from "./sweet.module.css";
 
 const Sweet = (props) => {
   const [session] = useSession();
@@ -9,7 +10,7 @@ const Sweet = (props) => {
   return (
     <article className={c.sweet}>
       <div className={c.userImage}>
-        <img src={creator.image} alt={creator.name} />
+        <Image src={creator.image} alt={creator.name} />
       </div>
       <div className={c.sweetContent}>
         <div className={c.name}>
@@ -21,7 +22,7 @@ const Sweet = (props) => {
         <div className={c.content}>{content}</div>
         {imageUrl && (
           <div className={c.sweetImage}>
-            <img src={imageUrl} alt={title} />
+            <Image src={imageUrl} alt={title} />
           </div>
         )}
 

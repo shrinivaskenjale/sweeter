@@ -1,3 +1,4 @@
+import Image from "next/image";
 import c from "./dashboard.module.css";
 
 const Dashboard = (props) => {
@@ -5,7 +6,7 @@ const Dashboard = (props) => {
   return (
     <div className={c.dashboard}>
       <div>
-        <img src={image} alt={name} />
+        <Image src={image} alt={name} />
       </div>
       <div className={c.name}>{name}</div>
     </div>

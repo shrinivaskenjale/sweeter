@@ -1,6 +1,7 @@
 import { signIn } from "next-auth/client";
 import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import c from "../styles/welcome.module.css";
 const WelcomePage = () => {
   const [session, sessionloading] = useSession();
@@ -24,7 +25,7 @@ const WelcomePage = () => {
         }
       >
         <span>
-          <img src="/google.png" alt="google logo" />
+          <Image src="/google.png" alt="google logo" />
         </span>
         Continue with Google
       </button>
