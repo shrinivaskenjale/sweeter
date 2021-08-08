@@ -1,0 +1,34 @@
+.navigation {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.navLinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary);
+}
+.navLink a,
+.navLink button {
+  display: inline-block;
+  border-radius: 50%;
+
+  padding: 0.75rem;
+  height: 100%;
+  transition: background-color 0.5s linear;
+}
+.navLink a:hover,
+.navLink button:hover {
+  background-color: var(--secondary);
+}
+.navLink svg {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.navLink button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}

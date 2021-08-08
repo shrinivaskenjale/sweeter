@@ -1,0 +1,23 @@
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paginator button {
+  border: 0;
+  outline: 0;
+  background-color: var(--primary);
+  margin: 1rem;
+  cursor: pointer;
+
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.paginator button svg {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.paginator button:hover {
+  background-color: var(--secondary);
+}

@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import { Provider } from "next-auth/client";
+import Navigation from "../components/layout/navigation";
+import Header from "../components/layout/header";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function App({ Component, pageProps }) {
+  return (
+    <Provider session={pageProps.session}>
+      <Header />
+      <Component {...pageProps} />
+      <Navigation />
+    </Provider>
+  );
 }
-
-export default MyApp

@@ -1,0 +1,43 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-image: url("/welcome-wave.svg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  margin-bottom: 0;
+}
+.welcome h2 {
+  margin: 3rem 0px;
+}
+.welcome h3 {
+  margin: 1rem;
+}
+.welcome h2 {
+  margin: 3rem;
+}
+.loginBtn {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  border: 2px solid var(--dark-grey);
+  outline: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.4s linear;
+}
+.loginBtn:hover {
+  background-color: var(--light-grey);
+}
+.loginBtn span {
+  margin-right: 1rem;
+}
+
+.loginBtn img {
+  width: 36px;
+}

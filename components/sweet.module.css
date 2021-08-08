@@ -1,0 +1,49 @@
+.sweet {
+  border-bottom: 2px solid var(--light-grey);
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 0.75rem;
+  padding: 0.75rem;
+  transition: background-color 0.3s linear;
+}
+.name a {
+  font-weight: bold;
+  color: var(--dark-grey);
+}
+.name a:hover {
+  color: var(--primary);
+}
+.title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.content {
+  margin-bottom: 0.5rem;
+}
+
+.sweetImage img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.sweet:hover {
+  background-color: var(--light-grey);
+}
+.userImage img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.deleteBtn {
+  margin-top: 0.75rem;
+  color: var(--dark-grey);
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+.deleteBtn:hover {
+  color: var(--primary);
+}
