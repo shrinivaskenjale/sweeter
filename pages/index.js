@@ -1,7 +1,6 @@
 import { signIn } from "next-auth/client";
 import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import c from "../styles/welcome.module.css";
 const WelcomePage = () => {
   const [session, sessionloading] = useSession();
@@ -21,11 +20,13 @@ const WelcomePage = () => {
       <button
         className={c.loginBtn}
         onClick={() =>
-          signIn("google", { callbackUrl: process.env.APP_URL + "/home" })
+          signIn("google", {
+            callbackUrl: process.env.NEXT_PUBLIC_APP_URL + "/home",
+          })
         }
       >
-        <span>
-          <Image src="/google.png" alt="google logo" />
+        <span className={c.googleLogo}>
+          <img src="/google.png" alt="google logo" />
         </span>
         Continue with Google
       </button>

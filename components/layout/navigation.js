@@ -5,7 +5,7 @@ import c from "./navigation.module.css";
 const Navigation = (props) => {
   const [session, sessionloading] = useSession();
   const clickHandler = (event) => {
-    signOut({ callbackUrl: process.env.APP_URL });
+    signOut({ callbackUrl: process.env.NEXT_PUBLIC_APP_URL });
   };
 
   if (sessionloading) return null;

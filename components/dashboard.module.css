@@ -4,10 +4,12 @@
   align-items: center;
   padding: 2rem 0;
 }
-.dashboard img {
-  border-radius: 10px;
+
+.imageContainer img {
   border: 5px solid var(--primary);
+  border-radius: 10px;
 }
+
 .name {
   font-weight: bold;
   font-size: 1.2rem;

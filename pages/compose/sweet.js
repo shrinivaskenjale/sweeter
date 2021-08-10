@@ -1,8 +1,8 @@
+import c from "../../styles/compose.module.css";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import ImagePreview from "../../components/image-preview";
-import c from "../../styles/compose.module.css";
 
 const ComposePage = (props) => {
   const [session, sessionloading] = useSession();
@@ -21,16 +21,21 @@ const ComposePage = (props) => {
   const createPostHandler = async () => {
     setLoading(true);
     setError(null);
+
     try {
       let imageUrl;
       if (imageFile) {
         const fileForm = new FormData();
         fileForm.append("file", imageFile);
-        fileForm.append("upload_preset", process.env.UPLOAD_PRESET);
-        const cloudinaryRes = await fetch(process.env.CLOUDINARY_URL, {
-          method: "POST",
-          body: fileForm,
-        });
+        fileForm.append("upload_preset", process.env.NEXT_PUBLIC_UPLOAD_PRESET);
+        const cloudinaryRes = await fetch(
+          process.env.NEXT_PUBLIC_CLOUDINARY_URL,
+          {
+            method: "POST",
+            body: fileForm,
+          }
+        );
+        console.log(cloudinaryRes);
         const file = await cloudinaryRes.json();
         imageUrl = file.secure_url;
       }
