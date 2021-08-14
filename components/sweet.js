@@ -9,7 +9,11 @@ const Sweet = (props) => {
   return (
     <article className={c.sweet}>
       <div className={c.userImage}>
-        <img src={creator.image} alt={creator.name} />
+        <Link href={`/${creator._id}`}>
+          <a>
+            <img src={creator.image} alt={creator.name} />
+          </a>
+        </Link>
       </div>
       <div className={c.sweetContent}>
         <div className={c.name}>

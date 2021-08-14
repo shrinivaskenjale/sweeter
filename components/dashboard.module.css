@@ -6,11 +6,34 @@
 }
 
 .imageContainer img {
-  border: 5px solid var(--primary);
+  /* border: 5px solid var(--primary); */
   border-radius: 10px;
+  box-shadow: 0 0 40px var(--primary);
 }
 
 .name {
+  margin-top: 1rem;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.about {
+  display: grid;
+  margin: 1rem 2rem 0;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-top: 1rem;
+}
+.editAbout {
+  margin-left: 1rem;
+}
+.editAbout svg {
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.editAbout:hover svg {
+  color: var(--secondary);
 }

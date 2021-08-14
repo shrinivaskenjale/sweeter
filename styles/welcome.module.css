@@ -11,14 +11,12 @@
   margin-bottom: 0;
 }
 .welcome h2 {
-  margin: 3rem 0px;
+  margin: 3rem 1rem;
 }
 .welcome h3 {
   margin: 1rem;
 }
-.welcome h2 {
-  margin: 3rem;
-}
+
 .loginBtn {
   background-color: #fff;
   display: flex;

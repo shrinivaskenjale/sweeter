@@ -5,6 +5,7 @@ import { useSweets } from "../../hooks/use-sweets";
 import Dashboard from "../../components/dashboard.js";
 import Sweets from "../../components/sweets";
 import Paginator from "../../components/paginator";
+// import { useEffect } from "react";
 
 const UserPage = (props) => {
   const [session, sessionloading] = useSession();
@@ -23,7 +24,9 @@ const UserPage = (props) => {
     fetchSweetsHandler,
   } = useSweets(`/api/user/${userId}/sweets`);
 
-  if (sessionloading) return null;
+  // useEffect(()=>{},[])
+
+  if (sessionloading) return <p className="loading">Loading...</p>;
 
   if (!sessionloading && !session) {
     router.replace("/");

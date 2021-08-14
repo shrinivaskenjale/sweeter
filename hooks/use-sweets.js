@@ -10,41 +10,38 @@ export const useSweets = (endPoint) => {
   const [error, setError] = useState(null);
 
   const router = useRouter();
-  const fetchSweetsHandler = useCallback(
-    async (direction) => {
-      setLoading(true);
-      setError(null);
-      if (direction) {
-        setSweets([]);
-      }
-      let page = currentPage;
-      if (direction === "next") {
-        page++;
-        setCurrentPage(page);
-      }
-      if (direction === "previous") {
-        page--;
-        setCurrentPage(page);
-      }
+  const fetchSweetsHandler = async (direction) => {
+    setLoading(true);
+    setError(null);
+    if (direction) {
+      setSweets([]);
+    }
+    let page = currentPage;
+    if (direction === "next") {
+      page++;
+      setCurrentPage(page);
+    }
+    if (direction === "previous") {
+      page--;
+      setCurrentPage(page);
+    }
 
-      try {
-        const res = await fetch(`${endPoint}?page=${page}`);
-        if (!res.ok) {
-          throw new Error("Something went wrong.");
-        }
-        const data = await res.json();
-        setSweets(data.sweets);
-        setTotalSweets(data.totalSweets);
-        if (data.user) {
-          setUser(data.user);
-        }
-      } catch (error) {
-        setError(error.message);
+    try {
+      const res = await fetch(`${endPoint}?page=${page}`);
+      if (!res.ok) {
+        throw new Error("Something went wrong.");
       }
-      setLoading(false);
-    },
-    [currentPage, router.isReady, user]
-  );
+      const data = await res.json();
+      setSweets(data.sweets);
+      setTotalSweets(data.totalSweets);
+      if (data.user) {
+        setUser(data.user);
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+    setLoading(false);
+  };
 
   const deleteSweetHandler = async (sweetId) => {
     console.log(sweetId);
@@ -71,7 +68,7 @@ export const useSweets = (endPoint) => {
     if (router.isReady) {
       fetchSweetsHandler();
     }
-  }, [router.isReady]);
+  }, [router.isReady, router.query.userId]);
 
   return {
     sweets,

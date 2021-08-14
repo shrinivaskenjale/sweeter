@@ -1,0 +1,41 @@
+.editAbout {
+  background-color: #fff;
+  z-index: 20;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  border-radius: 5px;
+}
+.formControl textarea {
+  font: inherit;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid var(--dark-grey);
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.formControl textarea:focus {
+  border: 2px solid var(--primary);
+}
+.formActions {
+  display: flex;
+  justify-content: center;
+}
+.formActions button {
+  cursor: pointer;
+  color: white;
+  background-color: var(--primary);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+}
+
+.formActions button:hover {
+  background-color: var(--secondary);
+}

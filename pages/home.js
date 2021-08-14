@@ -19,7 +19,7 @@ const HomePage = (props) => {
     fetchSweetsHandler,
   } = useSweets("/api/sweets");
 
-  if (sessionloading) return null;
+  if (sessionloading) return <p className="loading">Loading...</p>;
 
   if (!sessionloading && !session) {
     router.replace("/");
